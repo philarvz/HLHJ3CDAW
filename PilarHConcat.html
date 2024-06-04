@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Array.concat()</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(104, 228, 197);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            color: rgb(34, 29, 29);
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: rgb(206, 131, 206);
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: rgb(245, 199, 114);
+        }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .info {
+            font-size: 20px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        
+        .contenedor {
+            background-color: rgb(229, 135, 151);
+            border-radius: 15px;
+            width: 750px;
+            display: flex;
+            justify-content: space-around;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        .array1, .array2 {
+            background-color: rgb(219, 120, 137);
+            width: 350px;
+            padding: 10px;
+            border-radius: 15px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .arrayTitulo {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Uso del método concat() en Arrays</h1>
+    <label class="info">Este método combina dos o más arrays y devuelve un nuevo array sin modificar los originales.</label>
+    <br>
+    <div class="contenedor">
+        <div class="array1">
+            <label class="arrayTitulo">Array 1</label>
+            <label>const array1 = ["Este", "equipo", "trabaja"]</label>
+        </div>
+        <div class="array2">
+            <label class="arrayTitulo">Array 2</label>
+            <label>const array2 = ["duro", "y", "padrísimo"]</label>
+        </div>
+    </div>
+    <br>
+    <button id="concatButton">Concatenar Arrays</button>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('concatButton').addEventListener('click', function() {
+            // Define los arrays
+            const array1 = ["Este", "equipo", "trabaja"];
+            const array2 = ["duro", "y", "padrísimo"];
+
+            // Usar el método concat para combinar los arrays
+            const arrayConcatenado = array1.concat(array2);
+
+            // Mostrar el resultado en la página
+            document.getElementById('result').textContent = (`Array concatenado: ${arrayConcatenado.join(' ')}`);
+        });
+    </script>
+</body>
+</html>
