@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Array methods</title>
+    
+    <style>
+        h2{
+            color: aliceblue;
+            background-color: darkviolet;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        h3{
+            color: rgb(87, 4, 165);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        label{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-style: oblique;
+            color: rgb(12, 12, 151);  
+        }
+
+        li{
+            font-family:Arial, Helvetica, sans-serif;
+            font-style: oblique;
+        }
+
+        p{
+            color: rgb(6, 84, 187);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <form onsubmit="buscarUsuario">
+        <h2>Método Find</h2>
+        <p>Este método en JavaScript se utiliza para buscar el primer elemento en un array que cumpla con una condición especificada en una función de prueba. Este método es útil cuando necesitas encontrar un elemento específico dentro de un array basado en ciertos criterios de búsqueda.</p>
+        <h3>Por ejemplo:</h3>
+        <ol>
+            <li>Juan</li>
+            <li>Pedro</li>
+            <li>Frank</li>
+            <li>Pim</li>
+            <li>Kanye</li>
+        </ol>
+        <label for="usuarioABuscar">Ingresa el nombre de uno de estos sujetos para saber su informacion:</label>
+        <input type="text" id="usuarioABuscar" name="usuarioABuscar">
+        <br><br>
+        <button type="button" onclick="buscarUsuario()">Buscar</button>
+        </form>
+    </div>
+    <br><br>
+    <div id="Datos"></div>
+</body>
+<script>  
+    function buscarUsuario() {
+  let usuario = document.getElementById("usuarioABuscar").value;
+
+  const personas = [
+    { nombre: 'Juan', edad: 28, gustos: 'Plants vs zombies', desagrada: 'Pistaches' },
+    { nombre: 'Pedro', edad: 'Mapache', gustos: 'Mapache', desagrada: 'Mapache' },
+    { nombre: 'Frank', edad: 36, gustos: 'Nights', desagrada: 'Chris Brown' },
+    { nombre: 'Pim', edad: 20, gustos: 'Dave Land', desagrada: 'Frowning Friends' },
+    { nombre: 'Kanye', edad: 46, gustos: 'Kanye west', desagrada: 'Taylor swift' }
+  ];
+
+  const usuarioEncontrado = personas.find(persona => persona.nombre === usuario);
+
+  document.getElementById("Datos").innerText=("Usuario encontrado" + "\nEl es: " + (usuarioEncontrado.nombre) + "\nTiene: " + (usuarioEncontrado.edad) + " años\nLe gusta: " + (usuarioEncontrado.gustos) + "\nNo le gusta para nada: " + (usuarioEncontrado.desagrada));
+  if (usuarioEncontrado) {
+    alert("Usuario encontrado" + "\nEl es: " + (usuarioEncontrado.nombre) + "\nTiene: " + (usuarioEncontrado.edad) + " años\nLe gusta: " + (usuarioEncontrado.gustos) + "\nNo le gusta para nada: " + (usuarioEncontrado.desagrada));
+  } else {
+    alert("Usuario no encontrado, si pusiste la primera letra con minuscula, ponla en mayúscula");
+  }
+}
+</script>
+</html>
