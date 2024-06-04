@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        h1{
+        text-align: center;
+        }
+
+        input{
+            width: 350px;
+            height: 25px;
+        }
+        body{
+            background-color:aliceblue;
+        }
+        
+        button{
+            width: 150px;
+            height: 30px;
+            background-color: rgb(108, 108, 255);
+            border: none;
+            color:white;
+            
+        }
+        button:hover{
+            background-color: rgb(11, 11, 207); 
+        }
+        header{
+            background-color: rgb(58, 58, 165);
+            height: 30px;
+            color:white;
+            
+        }
+
+       
+    </style>
+    <title>Arrays</title>
+</head>
+<body>
+    <header>
+        Unidad 2 Tarea 2 Array methods</header>
+    <h1>Métodos con Arreglos</h1>
+    <h2>.revese()</h2>
+    <form>
+        <label> Invierte el orden de los elementos ingresados:</label>
+        <input type="text" name="arreglo_reverse" id="arreglo_reverse" placeholder="Intruduce los datos separados por espacios">
+        <button id="reverse" type="button" onclick="revertirArreglo()">Revertir</button>
+    </form>
+    <br><br>
+    <div id="mensaje"></div>
+   
+    <script>
+        function revertirArreglo() {
+            let arreglo1 = document.getElementById("arreglo_reverse").value;
+            let reversed_arreglo1 = arreglo1.split(" ").reverse();
+            document.getElementById("mensaje").innerText = reversed_arreglo1.join(" ");
+        }
+    </script>
+   
+</body>
+</html>
